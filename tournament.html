@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to right, rgb(85, 82, 82),rgb(14, 13, 13));
+        }
+        header{
+            text-align: center;
+        }
+        .bgmi{
+            color: rgb(235, 227, 227);
+            letter-spacing: 3px;
+        }
+        p{
+            color: rgb(104, 104, 184);
+            font-weight: 700;
+        }
+        .disc{
+            color: rgb(235, 70, 70);
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+        .fighters{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 6rem 0;
+            font-size: 30px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 4px;
+        }
+        .vs{
+            position: absolute;
+        }
+        .player1{
+            position: relative;
+        }
+        
+        .chitti{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        button{
+            border: 1px solid rgb(185, 153, 10);
+            color: rgb(20, 19, 19);
+            background-color: rgb(185, 153, 10);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px 40px;
+            border-radius: 25px;
+            font-size: 30px;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+        button:hover{
+            border: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1 class="bgmi">BGMI TOURNAMENT</h1><p>Road to Victory!!!</p><br>
+    <h3 class="disc">Disclaimer - Each player will go through two rounds to prove themselves and to enter the grand Finals</h3>
+    </header>
+    <div class="fighters">
+        <div class="player1">
+            <h1 id="warrior1" style="color: rgb(185, 153, 10);"></h1>
+        </div>
+        <div class="vs">
+            <h1>V/S</h1>
+        </div>
+        <div class="player2">
+            <h1 id="warrior2" style="color: rgb(8, 31, 136);"></h1>
+        </div>
+        
+    </div>
+    <div class="chitti">
+        <button type="button" id="btn">Chalo Phir!</button>
+    </div>
+    
+
+
+    <script>
+
+        
+        const btn = document.getElementById('btn')
+        const warrior1 = document.getElementById('warrior1')
+        const warrior2 = document.getElementById('warrior2')
+        
+        
+        
+        let zWarriors = ['WHIS','VEGETA','BROLY','GOKU','JIREN','GOHAN','YAMCHA','OoBhaii'];
+
+        console.log(zWarriors);
+        
+        btn.addEventListener('click', function(){
+            
+
+            
+            let zfighter1 = Math.floor(Math.random()*zWarriors.length);
+            warrior1.innerHTML = zWarriors[zfighter1]
+            zWarriors.splice(zfighter1,1);
+            
+            let zfighter2 = Math.floor(Math.random()*zWarriors.length);
+            warrior2.textContent = zWarriors[zfighter2]
+            zWarriors.splice(zfighter2,1);
+
+            console.log(zWarriors)
+            
+            if(zfighter1 === zfighter2){
+                return ""
+            }
+        })
+        
+        
+
+        
+            
+            
+            
+
+
+
+
+
+        // while(zWarriors.length){
+        //     let zfighters = Math.floor(Math.random()*zWarriors.length);
+        //     warrior1.innerHTML =zWarriors[zfighters]
+        //     zWarriors.splice(zfighters,2)
+
+        //     let zfighterz = Math.floor(Math.random()*zWarriors.length);
+        //     warrior2.textContent = zWarriors[zfighterz]
+        //     zWarriors.splice(zfighterz,1)
+
+
+        // }
+
+
+
+        
+
+    </script>
+</body>
+</html>
